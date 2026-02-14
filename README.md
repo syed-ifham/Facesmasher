@@ -1,4 +1,5 @@
 🎭 FaceSmasher
+
 Because sometimes, you just need to see faces... smashed.
 
 FaceSmasher is a project born out of a fascination with facial recognition and data processing. It’s designed to [insert one sentence: e.g., "detect and analyze facial features" or "reconstruct facial data"] using a mix of Python and some clever logic.
