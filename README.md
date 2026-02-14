@@ -20,7 +20,6 @@ Python: The powerhouse behind the logic.
 
 [OpenCV/TensorFlow/Mediapipe?]: The "eyes" of the project.
 
-Git: For keeping my sanity during version control.
 
 📝 License
 This project is open-source. Use it, learn from it, just don't use it for anything "unsavory."
