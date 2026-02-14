@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>facesmasher</title>
+    <link rel="icon" href="assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="page-content">
+        <header>
+            <h1 class="elegant-title">facesmasher</h1>
+            <p class="subtitle">Click the one that shines.</p>
+        </header>
+
+        <main class="arena">
+            <div class="glass-card" onclick="vote(this)">
+                <div class="image-wrapper">
+                    <img id="img-left" src="assets/image-left.jpg" alt="A" onerror="handleImageError(this)">
+                </div>
+                <div class="heart-icon">♥</div>
+            </div>
+
+            <div class="glass-card" onclick="vote(this)">
+                <div class="image-wrapper">
+                    <img id="img-right" src="assets/image-right.png" alt="B" onerror="handleImageError(this)">
+                </div>
+                <div class="heart-icon">♥</div>
+            </div>
+        </main>
+
+        <div class="status-box disclaimer-box">
+            <p><strong>Disclaimer:</strong>
+                My intention is not to judge people— this service is only meant to help select the best profile
+                picture.<br>
+        </div>
+
+        <footer>
+            <div class="score-pill">Votes: <span id="v-count">0</span></div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

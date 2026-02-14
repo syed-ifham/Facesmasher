@@ -1,0 +1,211 @@
+:root {
+    --pastel-pink: #ffdce5;
+    --pastel-blue: #dcf2ff;
+    --pastel-yellow: #fff8dc;
+    --white: #ffffff;
+    --text: #2d3436;
+    --accent: #ff7675;
+    --warning-red: #ff3e3e;
+    --info-blue: #00a8ff;
+    --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #fcfaff;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100dvh;
+}
+
+.blob-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    filter: blur(80px);
+    opacity: 0.5;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    animation: move 20s infinite alternate;
+}
+
+.blob-1 { width: 400px; height: 400px; background: var(--pastel-pink); top: -10%; left: -10%; }
+.blob-2 { width: 500px; height: 500px; background: var(--pastel-blue); bottom: -10%; right: -10%; animation-delay: -5s; }
+.blob-3 { width: 300px; height: 300px; background: var(--pastel-yellow); top: 40%; left: 30%; animation-delay: -10s; }
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(15%, 15%) scale(1.1); }
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+    padding: 4dvh 0;
+}
+
+.elegant-title {
+    font-weight: 900;
+    font-size: clamp(2rem, 8vw, 3rem);
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #2d3436 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+
+.arena {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 60%;
+    max-width: 900px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.glass-card {
+    flex: 1;
+    height: 52vh; 
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 32px;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s var(--spring);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s var(--spring);
+}
+
+
+@media (max-width: 768px) {
+    .arena {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .glass-card {
+        width: 90%;      
+        height: 350px;   
+        flex: none;      
+    }
+
+    .status-box {
+        width: 90% !important;
+    }
+}
+
+.status-box {
+    width: 60%;
+    max-width: 900px;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 24px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    backdrop-filter: blur(15px);
+}
+
+.disclaimer-box {
+    background: rgba(0, 168, 255, 0.05);
+    border: 1px solid rgba(0, 168, 255, 0.3);
+    color: #0077cc;
+}
+
+.warning-box {
+    background: rgba(255, 62, 62, 0.1);
+    border: 2px solid var(--warning-red);
+    color: var(--warning-red);
+    box-shadow: 0 0 15px rgba(255, 62, 62, 0.3);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 62, 62, 0.2); transform: scale(1); }
+    50% { box-shadow: 0 0 25px rgba(255, 62, 62, 0.5); transform: scale(1.01); }
+}
+
+.glass-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(255, 118, 117, 0.15);
+}
+
+.heart-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s var(--spring);
+}
+
+.glass-card:hover .heart-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.score-pill {
+    margin-top: 25px;
+    padding: 10px 24px;
+    background: var(--white);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.voted {
+    animation: celebrate 0.4s var(--spring);
+}
+
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
