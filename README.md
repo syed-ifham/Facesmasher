@@ -2,7 +2,9 @@
 
 Because sometimes, you just need to see faces... smashed.
 
-![Uploading Screenshot 2026-02-10 030328.png…]()
+
+<img width="1185" height="823" alt="Screenshot 2026-02-10 030328" src="https://github.com/user-attachments/assets/ce966dfa-e32c-4620-9da8-dc12641ca739" />
+
 
 
 FaceSmasher is a project born out of a fascination with facial recognition and data processing. It’s designed to [insert one sentence: e.g., "detect and analyze facial features" or "reconstruct facial data"] using a mix of Python and some clever logic.
